@@ -16,7 +16,7 @@ def login(
     user = db.query(DbUser).filter(DbUser.username == request.username).first()
     if not user:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Invalid credentials"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Invalid user."
         )
     if not Hash.verify(user.password, request.password):
         raise HTTPException(
