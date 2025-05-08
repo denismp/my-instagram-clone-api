@@ -1,0 +1,18 @@
+{
+  // allow the integrated terminal to pick up your login PATH
+  "terminal.integrated.inheritEnv": true,
+
+  // explicitly inject your Conda env’s bin directory first
+  "terminal.integrated.env.osx": {
+    "PATH": "/Users/denisputnam/opt/anaconda3/envs/inst_clone_env/bin:${env:PATH}"
+  },
+
+  // ensure we still launch bash as a login shell
+  "terminal.integrated.profiles.osx": {
+    "bash (login)": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "bash (login)"
+}
